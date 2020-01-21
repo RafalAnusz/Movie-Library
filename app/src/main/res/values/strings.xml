@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Movie Library</string>
+
+    <string name="planned_title">Planned</string>
+    <string name="watched_title">Watched</string>
+    <string name="movie_title">Movie title</string>
+    <string name="year_released">Year released</string>
+
+    <string name="movie_item_image">Movie cover</string>
+
+    <string name="no_movies_planned">No movies planned.</string>
+    <string name="no_movies_watched">No movies watched.</string>
+
+    <string name="movie_added">Movie has been added!</string>
+    <string name="movie_modified">Movie has been modified!</string>
+    <string name="cant_load_image">Couldn\'t load selected image</string>
+    <string name="cant_add_movie">Please input title and name</string>
+
+</resources>

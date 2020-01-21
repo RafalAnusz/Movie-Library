@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Number of columns for movies list -->
+    <integer name="grid_columns">1</integer>
+
+</resources>

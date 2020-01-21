@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.button.MaterialButtonToggleGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toggle_rating"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<!--    app:singleSelection="true">-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/star1"
+        style="@style/StarButton"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_star_border_gold_24dp"
+        app:iconSize="32dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/star2"
+        style="@style/StarButton"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_star_border_gold_24dp"
+        app:iconSize="32dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/star3"
+        style="@style/StarButton"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_star_border_gold_24dp"
+        app:iconSize="32dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/star4"
+        style="@style/StarButton"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_star_border_gold_24dp"
+        app:iconSize="32dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/star5"
+        style="@style/StarButton"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_star_border_gold_24dp"
+        app:iconSize="32dp" />
+
+</com.google.android.material.button.MaterialButtonToggleGroup>

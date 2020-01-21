@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rafal.movielibrary.viewmodel.MovieDetailViewModel" />
+        <variable
+            name="deleteListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="modifyListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="buttonListener"
+            type="android.view.View.OnClickListener" />
+        <import type="com.rafal.movielibrary.model.Movie"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/bottom_margin_detail">
+
+                <ImageView
+                    android:id="@+id/movieCover"
+                    android:layout_width="@dimen/movie_cover_width"
+                    android:layout_height="@dimen/movie_cover_height"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_large"
+                    app:imageFromUri="@{viewModel.movie.cover}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:contentDescription="@string/movie_item_image" />
+
+                <TextView
+                    android:id="@+id/movie_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_normal"
+                    android:text="@{viewModel.movie.title}"
+                    android:textAppearance="?attr/textAppearanceHeadline3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/movieCover"
+                    tools:text="Fantastic movie" />
+
+                <TextView
+                    android:id="@+id/movie_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_normal"
+                    android:text="@{Integer.toString(viewModel.movie.year)}"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/movie_title"
+                    tools:text="1998" />
+
+                <include
+                    layout="@layout/rating_stars"
+                    android:id="@+id/toggle_rating"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/movie_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:isGone="@{viewModel.movie.status == Movie.Status.Planned}"
+                    app:starsAdapter="@{viewModel.movie.rating}" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:text="@string/watched_title"
+                    android:onClick="@{buttonListener}"
+                    app:isGone="@{viewModel.movie.status == Movie.Status.Watched}"
+                    app:layout_constraintTop_toBottomOf="@id/movie_title"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:backgroundTint="@color/colorRed"
+            android:src="@drawable/ic_clear_black_24dp"
+            android:onClick="@{deleteListener}"
+            app:backgroundTint="@color/colorRed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabModify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:backgroundTint="@color/colorBlue"
+            android:src="@drawable/ic_build_black_24dp"
+            android:onClick="@{modifyListener}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
