@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,8 @@ import com.rafal.movielibrary.databinding.FragmentPlannedListBinding;
 import com.rafal.movielibrary.model.Movie;
 import com.rafal.movielibrary.viewmodel.PlannedListViewModel;
 import com.rafal.movielibrary.viewmodel.util.PlannedListViewModelFactory;
+
+import org.w3c.dom.Text;
 
 
 public class PlannedListFragment extends Fragment {
@@ -47,6 +50,7 @@ public class PlannedListFragment extends Fragment {
         plannedListViewModel.movies.observe(this, movies -> {
             binding.setHasMoviesPlanned(!movies.isEmpty());
             adapter.submitList(movies);
+            ((TextView)getView().findViewById(R.id.empty_planned_list)).setText(getString(R.string.no_movies_planned));
         });
     }
 

@@ -49,7 +49,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/movie_item_image"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="I Killed My Lesbian Wife, Hung Her on a Meathook, and Now I Have a Three Picture Deal at Disney" />
+                tools:text="Fantastic movie" />
 
 
             <TextView

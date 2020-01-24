@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,6 +48,7 @@ public class WatchedListFragment extends Fragment {
         watchedListViewModel.movies.observe(this, movies -> {
             binding.setHasMoviesWatched(!movies.isEmpty());
             adapter.submitList(movies);
+            ((TextView)getView().findViewById(R.id.empty_watched_list)).setText(getString(R.string.no_movies_watched));
         });
     }
 

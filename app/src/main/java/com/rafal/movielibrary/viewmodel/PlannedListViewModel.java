@@ -19,7 +19,6 @@ public class PlannedListViewModel extends ViewModel {
         super();
         repository = DataRepository.getRepository(context);
         movies = repository.getMoviesPlanned();
-
     }
 
     public void updateMovie(Movie movie) {
